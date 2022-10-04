@@ -25,4 +25,10 @@ public class AlunoModel {
 
     @Column(nullable = false, unique = true, length = 11)
     private String cpf;
+
+    @Column(nullable = false)
+    private LocalDateTime dataDeCadastro;
+
+
+
 }
