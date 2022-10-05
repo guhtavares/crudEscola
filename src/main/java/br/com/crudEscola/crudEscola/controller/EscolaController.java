@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/Escola")
+@RequestMapping("/escola")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class EscolaController {
 
@@ -28,6 +29,11 @@ public class EscolaController {
         BeanUtils.copyProperties(alunoRequest, alunoModel);
         alunoModel.setDataDeCadastro(LocalDateTime.now(ZoneId.of("UTC")));
         return ResponseEntity.status(HttpStatus.CREATED).body(alunoService.save(alunoModel));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<AlunoModel>> getAllAluno(){
+        return ResponseEntity.status(HttpStatus.OK).body(alunoService.findAll());
     }
 
 
