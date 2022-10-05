@@ -8,6 +8,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
+@Table(name = "TB_Curso")
 public class CursoModel {
 
     @Id
@@ -16,5 +17,6 @@ public class CursoModel {
 
     @Column(nullable = false, unique = true, length = 200)
     private String nome;
+
     private String descricaoCurso;
 }

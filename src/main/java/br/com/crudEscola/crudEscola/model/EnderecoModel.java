@@ -8,6 +8,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
+@Table(name = "TB_ENDERECO")
 public class EnderecoModel {
 
     @Id
